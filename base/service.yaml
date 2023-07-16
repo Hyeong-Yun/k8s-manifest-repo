@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: loadbalancer-service-deployment
+  name: my-app-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: my-app
   ports:
