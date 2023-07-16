@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test
   newName: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test
-  newTag: sample_image
+  newTag: latest
 resources:
 - ../../base
 patchesStrategicMerge:
