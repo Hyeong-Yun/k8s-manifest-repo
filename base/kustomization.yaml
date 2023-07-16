@@ -6,6 +6,6 @@ images:
   newTag: sample_image
 resources:
 - ../../base
-patchesStrategicMerge:
+patches:
 - front-deployment-patch.yaml
 - front-service-patch.yaml
