@@ -22,6 +22,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: loadbalancer-service-deployment
+                name: my-app-service
                 port:
                   number: 443
