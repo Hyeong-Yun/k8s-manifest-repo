@@ -4,18 +4,17 @@ metadata:
   name: my-app
 spec:
   replicas: 2
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: my-app
   template:
     metadata:
+      name: my-app
       labels:
         app: my-app
     spec:
       containers:
-      - image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:sample_image
-        name: my-app
+      - name: my-app-container
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:sample_image
         ports:
         - containerPort: 80
-        imagePullPolicy: Always
