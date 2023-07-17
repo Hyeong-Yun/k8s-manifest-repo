@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/actions.ssl-redirect: '443'
-    alb.ingress.kubernetes.io/load-balancer-name: ingress-service
+    alb.ingress.kubernetes.io/load-balancer-name: ingress-alb
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/subnets: subnet-09fbc54863f1939eb, subnet-0cdde4eb82eacb5e0
     alb.ingress.kubernetes.io/scheme: internet-facing
