@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: common-external-ingress
+  name: my-ingress-service
   namespace: argocd
   annotations:
     kubernetes.io/ingress.class: alb
@@ -13,7 +13,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/30feba46-6d8c-433a-b7cf-bf183e7c451a
   labels:
-    app: common-external-ingress
+    app: my-ingress-service
 spec:
   rules:
     - http:
