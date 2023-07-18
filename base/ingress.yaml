@@ -26,7 +26,7 @@ spec:
                 port:
                   number: 80
           - path: /login
-            pathType: ImplementationSpecific
+            pathType: prefix
             backend:
               service:
                 name: my-login-service
