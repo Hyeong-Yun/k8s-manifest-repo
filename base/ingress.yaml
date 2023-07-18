@@ -29,6 +29,6 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: my-app-service
+                name: my-login-service
                 port:
                   number: 80
