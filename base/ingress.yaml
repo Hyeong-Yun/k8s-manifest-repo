@@ -19,21 +19,17 @@ spec:
     - host: kato.yunhyeong.shop
     - http:
         paths:
-          - path: /
+          - path: /*
             pathType: Prefix
             backend:
-              serviceName: my-app-service
-              servicePort: 80
-              # service:
-              #   name: my-app-service
-              #   port:
-              #     number: 80
-          - path: /login
+              service:
+                name: my-app-service
+                port:
+                  number: 80
+          - path: /login/*
             pathType: Prefix
             backend:
-              serviceName: my-login-service
-              servicePort: 80
-              # service:
-              #   name: my-login-service
-              #   port:
-              #     number: 80
+              service:
+                name: my-login-service
+                port:
+                  number: 80
