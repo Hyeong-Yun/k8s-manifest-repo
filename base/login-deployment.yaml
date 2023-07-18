@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-login
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-login
+  template:
+    metadata:
+      name: my-login
+      labels:
+        app: my-login
+    spec:
+      containers:
+      - name: my-login-container
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:login-6c0d95e
+        ports:
+        - containerPort: 80
