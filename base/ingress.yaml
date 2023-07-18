@@ -22,14 +22,18 @@ spec:
           - path: /*
             pathType: Prefix
             backend:
-              service:
-                name: my-app-service
-                port:
-                  number: 80
+              serviceName: my-app-service
+              servicePort: 80
+              # service:
+              #   name: my-app-service
+              #   port:
+              #     number: 80
           - path: /login/*
             pathType: Prefix
             backend:
-              service:
-                name: my-login-service
-                port:
-                  number: 80
+              serviceName: my-login-service
+              servicePort: 80
+              # service:
+              #   name: my-login-service
+              #   port:
+              #     number: 80
