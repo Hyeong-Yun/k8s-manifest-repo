@@ -16,6 +16,7 @@ metadata:
     app: my-ingress-service
 spec:
   rules:
+    - host: kato.yunhyeong.shop
     - http:
         paths:
           - path: /
@@ -26,7 +27,7 @@ spec:
                 port:
                   number: 80
           - path: /login
-            pathType: prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: my-login-service
