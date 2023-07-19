@@ -6,6 +6,8 @@ resources:
 - ingress.yaml
 - login-deployment.yaml
 - login-service.yaml
+- product-deployment.yaml
+- product-service.yaml
 # - Rollout.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
