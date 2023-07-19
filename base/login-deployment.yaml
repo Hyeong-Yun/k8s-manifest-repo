@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: my-login-container
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:login-03ead55
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:login-8d3fc57
         ports:
         - containerPort: 80
