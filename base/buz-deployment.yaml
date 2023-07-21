@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: my-buz-container
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-8ea5a1b
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-1ea5f99e
         ports:
         - containerPort: 80
