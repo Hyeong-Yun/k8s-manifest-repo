@@ -40,7 +40,7 @@ spec:
                 name: my-product-service
                 port:
                   number: 80
-          - path: /product/products
+          - path: /chestnut
             pathType: Prefix
             backend:
               service:
