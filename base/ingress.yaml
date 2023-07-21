@@ -47,3 +47,10 @@ spec:
                 name: my-commidity-service
                 port:
                   number: 80
+          - path: /buz
+            pathType: Prefix
+            backend:
+              service:
+                name: my-buz-service
+                port:
+                  number: 80
