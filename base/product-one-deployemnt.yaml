@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-product
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-product
+  template:
+    metadata:
+      name: my-product
+      labels:
+        app: my-product
+    spec:
+      containers:
+      - name: my-product-container
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-fe79b96
+        ports:
+        - containerPort: 80
