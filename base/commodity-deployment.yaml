@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-product-one
+  name: my-commidity
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-product-one
+      app: my-commidity
   template:
     metadata:
-      name: my-product-one
+      name: my-commidity
       labels:
-        app: my-product-one
+        app: my-commidity
     spec:
       containers:
-      - name: my-product-container
+      - name: my-commidity-container
         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-fe79b96
         ports:
         - containerPort: 80
