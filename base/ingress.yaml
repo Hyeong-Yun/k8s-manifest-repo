@@ -55,12 +55,11 @@
 #                 port:
 #                   number: 80
 
-
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress-service
-  namespace: istio-system
+  namespace: default
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
