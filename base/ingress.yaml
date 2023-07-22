@@ -59,7 +59,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress-service
-  namespace: default
+  namespace: istio-system
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
@@ -82,7 +82,7 @@ spec:
               service:
                 name: istio-ingressgateway
                 port:
-                  number: 80
+                  number: 443
 
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
