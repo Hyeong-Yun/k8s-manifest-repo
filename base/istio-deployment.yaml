@@ -50,6 +50,6 @@ spec:
     spec:
       containers:
       - name: test-home
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/front-login:main-9c1d37a
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-9c1d37a
         ports:
         - containerPort: 80
