@@ -28,6 +28,6 @@ spec:
         exact: /
     route:
     - destination:
-        host: my-app-home
+        host: kustomize-my-app-home
         port:
           number: 80
