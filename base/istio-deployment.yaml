@@ -4,7 +4,7 @@ metadata:
   name: my-app-home
 spec:
   selector:
-    app: my-app-home
+    app: my-app-home-v0
   ports:
   - protocol: TCP
     port: 80
