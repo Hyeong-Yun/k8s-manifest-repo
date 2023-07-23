@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: my-app-home-v0
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: my-app-home
@@ -37,7 +37,7 @@ kind: Deployment
 metadata:
   name: my-app-home-v1
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: my-app-home
