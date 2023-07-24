@@ -121,7 +121,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/actions.ssl-redirect: '80'
+    alb.ingress.kubernetes.io/actions.ssl-redirect: '443'
     alb.ingress.kubernetes.io/load-balancer-name: ingress-alb
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/subnets: subnet-000ecdbcc3002905a, subnet-0bee48a35072a10d7 
