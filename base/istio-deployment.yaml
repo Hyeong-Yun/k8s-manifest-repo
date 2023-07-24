@@ -50,6 +50,6 @@ spec:
     spec:
       containers:
       - name: my-app-home
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-9c1d37a
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-6918dd0
         ports:
         - containerPort: 80
