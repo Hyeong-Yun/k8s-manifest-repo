@@ -132,6 +132,7 @@ metadata:
     app: my-ingress-service
 spec:
   rules:
+    - host: test.toydream.com
     - http:
         paths:
           - path: /
