@@ -127,7 +127,7 @@ metadata:
     alb.ingress.kubernetes.io/subnets: subnet-000ecdbcc3002905a, subnet-0bee48a35072a10d7 
     alb.ingress.kubernetes.io/scheme: internet-facing
     #alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/30feba46-6d8c-433a-b7cf-bf183e7c451a
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:451456566564:certificate/7551e577-c063-41a4-bedd-581bcd1e698c
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:451456566564:certificate/f61dc395-2fac-42fc-8fd0-35e9648ff1c2
   labels:
     app: my-ingress-service
 spec:
