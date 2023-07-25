@@ -40,6 +40,7 @@
 #     port: 80
 #     nodePort: 30081
 #   type: NodePort
+
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
@@ -75,7 +76,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: my-app
+    app: rollout-bluegreen
   ports:
   - protocol: TCP
     port: 80
@@ -90,7 +91,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: my-app-service-preview
+    app: rollout-bluegreen
   ports:
   - protocol: TCP
     port: 80
