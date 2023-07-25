@@ -1,4 +1,4 @@
-namePrefix:
+namePrefix: kustomize-
 
 resources:
 - main-deployment.yaml
