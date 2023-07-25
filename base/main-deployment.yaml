@@ -1,42 +1,42 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: rollout-bluegreen
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: my-app
+      app: rollout-bluegreen
   template:
     metadata:
-      name: my-app
+      name: rollout-bluegreen
       labels:
-        app: my-app
+        app: rollout-bluegreen
     spec:
       containers:
-      - name: my-app-container
+      - name: rollout-bluegreen-container
         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3
         ports:
         - containerPort: 80
 
-# ---
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: my-app-preview
-# spec:
-#   replicas: 1
-#   selector:
-#     matchLabels:
-#       app: my-app-preview
-#   template:
-#     metadata:
-#       name: my-app-preview
-#       labels:
-#         app: my-app-preview
-#     spec:
-#       containers:
-#       - name: my-app-preview-container
-#         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-65e6a38
-#         ports:
-#         - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rollout-bluegreen-preview
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rollout-bluegreen-preview
+  template:
+    metadata:
+      name: rollout-bluegreen-preview
+      labels:
+        app: rollout-bluegreen-preview
+    spec:
+      containers:
+      - name: rollout-bluegreen-preview-container
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-65e6a38
+        ports:
+        - containerPort: 80
