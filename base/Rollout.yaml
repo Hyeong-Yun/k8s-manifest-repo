@@ -63,8 +63,8 @@ spec:
         - containerPort: 8080
   strategy:
     blueGreen:
-      activeService: rollout-bluegreen-active
-      previewService: rollout-bluegreen-preview
+      activeService: my-app-service
+      previewService: my-app-service-preview
       autoPromotionEnabled: false
  
 ---

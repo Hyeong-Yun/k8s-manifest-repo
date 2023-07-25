@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: my-app
@@ -25,7 +25,7 @@ kind: Deployment
 metadata:
   name: my-app-preview
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: my-app-preview
@@ -37,6 +37,6 @@ spec:
     spec:
       containers:
       - name: my-app-preview-container
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-6283973
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-65e6a38
         ports:
         - containerPort: 80
