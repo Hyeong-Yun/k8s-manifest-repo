@@ -63,8 +63,8 @@ spec:
         - containerPort: 8080
   strategy:
     blueGreen:
-      activeService: my-app-service
-      previewService: my-app-service-preview
+      activeService: rollout-bluegreen-active
+      previewService: rollout-bluegreen-preview
       autoPromotionEnabled: false
  
 ---
@@ -90,7 +90,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: my-app-preview
+    app: my-app-service-preview
   ports:
   - protocol: TCP
     port: 80
