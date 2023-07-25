@@ -11,12 +11,13 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/subnets: subnet-09fbc54863f1939eb, subnet-0cdde4eb82eacb5e0
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/30feba46-6d8c-433a-b7cf-bf183e7c451a
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/36917b97-719d-49f2-9f20-bfd120a82e79
+    #alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/30feba46-6d8c-433a-b7cf-bf183e7c451a
   labels:
     app: my-ingress-service
 spec:
   rules:
-    - host: kato.yunhyeong.shop
+    - host: toy.yunhyeong.shop
     - http:
         paths:
           - path: /
