@@ -4,10 +4,10 @@ resources:
 - main-deployment.yaml
 - main-service.yaml
 - ingress.yaml
-# - login-deployment.yaml
-# - login-service.yaml
-# - product-deployment.yaml
-# - product-service.yaml
+- login-deployment.yaml
+- login-service.yaml
+- product-deployment.yaml
+- product-service.yaml
 # - commodity-deployment.yaml
 # - commodity-service.yaml
 # - buz-deployment.yaml
