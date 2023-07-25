@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: canary-rollout
 spec:
-  replicas: 4
+  replicas: 2
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -22,10 +22,10 @@ spec:
   # 이 부분에서 카나리로 지정
   strategy:
     canary:
-      maxSurge: "25%"    # canary 배포로 생성할 pod의 비율
+      maxSurge: "50%"    # canary 배포로 생성할 pod의 비율
       maxUnavailable: 0  # 업데이트 될 때 사용할 수 없는 pod의 최대 수
       steps:
-      - setWeight: 25    # 카나리로 배포된 서버로 전송해야될 트래픽 비율
+      - setWeight: 50    # 카나리로 배포된 서버로 전송해야될 트래픽 비율
       - pause: {}        # AutoPromotion Time (하단 설명 참조)
 ---
 kind: Service
@@ -40,61 +40,3 @@ spec:
     port: 80
     nodePort: 30081
   type: NodePort
-
-
-# apiVersion: argoproj.io/v1alpha1
-# kind: Rollout
-# metadata:
-#   name: rollout-bluegreen
-# spec:
-#   replicas: 2
-#   revisionHistoryLimit: 2
-#   selector:
-#     matchLabels:
-#       app: rollout-bluegreen
-#   template:
-#     metadata:
-#       labels:
-#         app: rollout-bluegreen
-#     spec:
-#       containers:
-#       - name: rollouts-demo
-#         image: argoproj/rollouts-demo:blue
-#         imagePullPolicy: Always
-#         ports:
-#         - containerPort: 8080
-#   strategy:
-#     blueGreen:
-#       activeService: rollout-bluegreen-active
-#       previewService: rollout-bluegreen-preview
-#       autoPromotionEnabled: false
- 
-# ---
-# kind: Service
-# apiVersion: v1
-# metadata:
-#   name: rollout-bluegreen-active
-# spec:
-#   type: NodePort
-#   selector:
-#     app: rollout-bluegreen
-#   ports:
-#   - protocol: TCP
-#     port: 80
-#     targetPort: 8080
-#     nodePort: 30081
- 
-# ---
-# kind: Service
-# apiVersion: v1
-# metadata:
-#   name: rollout-bluegreen-preview
-# spec:
-#   type: NodePort
-#   selector:
-#     app: rollout-bluegreen
-#   ports:
-#   - protocol: TCP
-#     port: 80
-#     targetPort: 8080
-#     nodePort: 30082
