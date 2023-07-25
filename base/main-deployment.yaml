@@ -18,3 +18,25 @@ spec:
         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-6283973
         ports:
         - containerPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-preview
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app-preview
+  template:
+    metadata:
+      name: my-app-preview
+      labels:
+        app: my-app-preview
+    spec:
+      containers:
+      - name: my-app-preview-container
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-6283973
+        ports:
+        - containerPort: 80
