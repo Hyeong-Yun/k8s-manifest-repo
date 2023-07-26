@@ -1,8 +1,8 @@
 namePrefix: kustomize-
 
 resources:
-# - main-deployment.yaml
-# - main-service.yaml
+- main-deployment.yaml
+- main-service.yaml
 - ingress.yaml
 - login-deployment.yaml
 - login-service.yaml
