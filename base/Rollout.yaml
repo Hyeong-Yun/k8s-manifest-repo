@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-65e6a38
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-76f93d0
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
