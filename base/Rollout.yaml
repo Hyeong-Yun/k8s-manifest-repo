@@ -26,9 +26,7 @@ spec:
       steps:
       - setWeight: 25
       - pause: {}   
-
 ---
-
 kind: Service
 apiVersion: v1
 metadata:
