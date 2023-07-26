@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: canary-rollout
 spec:
-  replicas: 2
+  replicas: 4
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -15,16 +15,16 @@ spec:
     spec:
       containers:
       - name: canary-rollouts
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-76f93d0
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
   strategy:
     canary:
-      maxSurge: "25%"
+      maxSurge: "50%"
       maxUnavailable: 0
       steps:
-      - setWeight: 25
+      - setWeight: 50
       - pause: {}   
 ---
 kind: Service
