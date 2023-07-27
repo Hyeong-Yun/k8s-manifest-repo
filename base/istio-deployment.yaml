@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: my-app-home
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-8980298
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3
         ports:
         - containerPort: 80
 ---
@@ -50,6 +50,6 @@ spec:
     spec:
       containers:
       - name: my-app-home
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/cicd-test:main-6918dd0
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-76f93d0
         ports:
         - containerPort: 80
