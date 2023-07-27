@@ -59,7 +59,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: login
+        exact: /login
     route:
     - destination:
         host: kustomize-my-app-login
