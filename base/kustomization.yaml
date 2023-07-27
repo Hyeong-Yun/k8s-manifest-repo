@@ -8,7 +8,6 @@ resources:
 - login-service.yaml
 - product-deployment.yaml
 - product-service.yaml
-
 # - Rollout.yaml
 # - istio-gateway.yaml
 # - istio-deployment.yaml
