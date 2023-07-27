@@ -14,6 +14,21 @@ spec:
     - "*"
 ---
 apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: my-app-login-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: istio-virtualservice
@@ -40,7 +55,7 @@ spec:
   hosts:
   - "*"
   gateways:
-  - kustomize-my-app-gateway
+  - kustomize-my-app-login-gateway
   http:
   - match:
     - uri:
