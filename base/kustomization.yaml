@@ -9,7 +9,6 @@ resources:
 # - product-deployment.yaml
 # - product-service.yaml
 # - Rollout.yaml
-
 - istio-gateway.yaml
 - istio-deployment.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
