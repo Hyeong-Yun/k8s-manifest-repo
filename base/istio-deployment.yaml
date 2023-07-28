@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: my-app-home
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-a769e7b
         ports:
         - containerPort: 80
 ---
@@ -50,7 +50,7 @@ spec:
     spec:
       containers:
       - name: my-app-home
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-76f93d0
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-4c3e767
         ports:
         - containerPort: 80
 ---
