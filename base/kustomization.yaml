@@ -3,12 +3,12 @@ namePrefix: kustomize-
 resources:
 # - main-deployment.yaml
 # - main-service.yaml
-- ingress.yaml
 # - login-deployment.yaml
 # - login-service.yaml
 # - product-deployment.yaml
 # - product-service.yaml
 # - Rollout.yaml
+- ingress.yaml
 - istio-gateway.yaml
 - istio-deployment.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1

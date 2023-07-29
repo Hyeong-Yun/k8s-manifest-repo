@@ -110,9 +110,7 @@ spec:
         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:login-4fee9e1
         ports:
         - containerPort: 80
-
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -143,7 +141,7 @@ spec:
     spec:
       containers:
       - name: my-app-product
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:product-ce278aa
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:product-6caf64a
         ports:
         - containerPort: 80
 ---
