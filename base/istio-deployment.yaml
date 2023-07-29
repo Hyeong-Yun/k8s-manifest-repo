@@ -85,7 +85,7 @@ spec:
     spec:
       containers:
       - name: my-app-login
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:login-4fddec2
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:login-f4ddec2
         ports:
         - containerPort: 80
 ---
