@@ -68,7 +68,6 @@ spec:
       activeService: rollout-bluegreen-active
       previewService: rollout-bluegreen-preview
       autoPromotionEnabled: false
-
 ---
 kind: Service
 apiVersion: v1
