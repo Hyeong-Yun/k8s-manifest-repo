@@ -1,41 +1,102 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+# apiVersion: argoproj.io/v1alpha1
+# kind: Rollout
+# metadata:
+#   name: canary-rollout
+# spec:
+#   replicas: 2
+#   revisionHistoryLimit: 2
+#   selector:
+#     matchLabels:
+#       app: canary
+#   template:
+#     metadata:
+#       labels:
+#         app: canary
+#     spec:
+#       containers:
+#       - name: canary-rollouts
+#         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3
+#         imagePullPolicy: Always
+#         ports:
+#         - containerPort: 5000
+#   strategy:
+#     canary:
+#       maxSurge: "25%"
+#       maxUnavailable: 0
+#       steps:
+#       - setWeight: 25
+#       - pause: {}   
+# ---
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: canary-service
+# spec:
+#   selector:
+#     app: canary
+#   ports:
+#   - protocol: TCP
+#     port: 80
+#     nodePort: 30081
+#   type: NodePort
+
+
+# ArgoCD Blue/Green 배포 예제
+apiVersion: argoproj.io/v1alpha1     # apps/v1 대신 argoproj.io/v1alpha1을 사용한다
+kind: Rollout  # Deplyment 대신 Rollout을 사용한다
 metadata:
-  name: canary-rollout
+  name: rollout-bluegreen
 spec:
   replicas: 2
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: canary
+      app: rollout-bluegreen
   template:
     metadata:
       labels:
-        app: canary
+        app: rollout-bluegreen
     spec:
       containers:
-      - name: canary-rollouts
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3
+      - name: rollouts-demo
+        image: argoproj/rollouts-demo:blue
+       #image: argoproj/rollouts-demo:green
         imagePullPolicy: Always
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
   strategy:
-    canary:
-      maxSurge: "25%"
-      maxUnavailable: 0
-      steps:
-      - setWeight: 25
-      - pause: {}   
+    blueGreen: 
+      #activeService는 이전의 배포된 Blue 서비스
+      activeService: rollout-bluegreen-active
+      
+      #previewService는 새롭게 배포될 Green 서비스
+      previewService: rollout-bluegreen-preview
+      
+      #autoPromotioEnabled 옵션은 Blue/Green 배포를 자동으로 진행할 것인지 여부. false 옵션을 사용해 수동으로 지정
+      autoPromotionEnabled: false
+
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: canary-service
+  name: rollout-bluegreen-active
 spec:
   selector:
-    app: canary
+    app: my-app
   ports:
   - protocol: TCP
     port: 80
-    nodePort: 30081
-  type: NodePort
+    targetPort: 8080
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rollout-bluegreen-preview
+spec:
+  selector:
+    app: my-app-preview
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
