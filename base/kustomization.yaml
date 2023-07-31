@@ -3,10 +3,10 @@
 resources:
 # - main-deployment.yaml
 # - main-service.yaml
-- login-deployment.yaml
-- login-service.yaml
-- product-deployment.yaml
-- product-service.yaml
+# - login-deployment.yaml
+# - login-service.yaml
+# - product-deployment.yaml
+# - product-service.yaml
 - Rollout.yaml
 - ingress.yaml
 # - istio-gateway.yaml
