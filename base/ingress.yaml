@@ -22,7 +22,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: my-app-service
+                name: rollout-bluegreen-active # my-app-service
                 port:
                   number: 80
           - path: /login
