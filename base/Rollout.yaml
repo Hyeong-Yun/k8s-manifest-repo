@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: argoproj/rollouts-demo:blue
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3
        #image: argoproj/rollouts-demo:green
         imagePullPolicy: Always
         ports:
@@ -82,7 +82,7 @@ metadata:
   name: rollout-bluegreen-active
 spec:
   selector:
-    app: my-app
+    app: rollout-bluegreen
   ports:
   - protocol: TCP
     port: 80
@@ -95,7 +95,7 @@ metadata:
   name: rollout-bluegreen-preview
 spec:
   selector:
-    app: my-app-preview
+    app: rollout-bluegreen
   ports:
   - protocol: TCP
     port: 80
