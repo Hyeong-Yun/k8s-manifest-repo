@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: my-product-container
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:product-c72493e
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:product-6caf64a
         ports:
         - containerPort: 80
