@@ -10,6 +10,20 @@ spec:
     port: 80
     targetPort: 80
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-home-new
+spec:
+  selector:
+    app: my-app-home-new
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -40,16 +54,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app-home
+      app: my-app-home-new
       version: v1
   template:
     metadata:
       labels:
-        app: my-app-home
+        app: my-app-home-new
         version: v1
     spec:
       containers:
-      - name: my-app-home
+      - name: my-app-home-new
         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-4c3e767
         ports:
         - containerPort: 80

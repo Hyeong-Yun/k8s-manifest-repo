@@ -59,6 +59,12 @@ spec:
     route:
     - destination:
         host: kustomize-my-app-home
+        subnet: v0
+        port:
+          number: 80
+    - destination:
+        host: kustomize-my-app-home-new
+        host: v1
         port:
           number: 80
 ---
