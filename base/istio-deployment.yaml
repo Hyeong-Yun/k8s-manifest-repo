@@ -68,7 +68,7 @@ spec:
         ports:
         - containerPort: 80
 ---
-
+### login
 apiVersion: v1
 kind: Service
 metadata:
@@ -76,6 +76,18 @@ metadata:
 spec:
   selector:
     app: my-app-login
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-login-new
+spec:
+  selector:
+    app: my-app-login-new
   ports:
   - protocol: TCP
     port: 80
@@ -111,20 +123,21 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-app-login
+      app: my-app-login-new
       version: v1
   template:
     metadata:
       labels:
-        app: my-app-login
+        app: my-app-login-new
         version: v1
     spec:
       containers:
-      - name: my-app-login
+      - name: my-app-login-new
         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:login-4fee9e1
         ports:
         - containerPort: 80
 ---
+### product
 apiVersion: v1
 kind: Service
 metadata:
