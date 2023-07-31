@@ -115,3 +115,7 @@ spec:
         host: kustomize-my-app-product
         port:
           number: 80
+    - destination:
+        host: kustomize-my-app-product-new
+        port:
+          number: 80
