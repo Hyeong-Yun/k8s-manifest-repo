@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3 # blue
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-4c3e767 # green
         imagePullPolicy: Always
         ports:
         - containerPort: 80
