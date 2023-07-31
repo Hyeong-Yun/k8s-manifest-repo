@@ -62,11 +62,13 @@ spec:
         subnet: v0
         port:
           number: 80
+      weight: 60
     - destination:
         host: kustomize-my-app-home-new
         subnet: v1
         port:
           number: 80
+      weight: 40
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
