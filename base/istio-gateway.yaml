@@ -64,7 +64,7 @@ spec:
           number: 80
     - destination:
         host: kustomize-my-app-home-new
-        host: v1
+        subnet: v1
         port:
           number: 80
 ---
