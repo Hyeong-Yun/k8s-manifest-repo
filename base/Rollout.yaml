@@ -63,7 +63,7 @@ spec:
        #image: argoproj/rollouts-demo:green
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80
   strategy:
     blueGreen: 
       #activeService는 이전의 배포된 Blue 서비스
@@ -86,7 +86,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 80
 
 ---
 kind: Service
@@ -99,4 +99,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 80
