@@ -59,8 +59,8 @@ spec:
     spec:
       containers:
       - name: rollouts-demo
-        #image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3 # blue
-        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-4c3e767 # green
+        image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-3410cd3 # blue
+        #image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-4c3e767 # green
        #image: argoproj/rollouts-demo:green
         imagePullPolicy: Always
         ports:
@@ -100,4 +100,5 @@ spec:
   ports:
   - protocol: TCP
     port: 80
+    nodePort: 30081
     targetPort: 80
