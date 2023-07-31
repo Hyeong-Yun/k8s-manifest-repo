@@ -25,20 +25,20 @@ spec:
                 name: rollout-bluegreen-active # my-app-service
                 port:
                   number: 80
-#           - path: /login
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: my-login-service
-#                 port:
-#                   number: 80
-#           - path: /product
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: my-product-service
-#                 port:
-#                   number: 80
+          - path: /login
+            pathType: Prefix
+            backend:
+              service:
+                name: my-login-service
+                port:
+                  number: 80
+          - path: /product
+            pathType: Prefix
+            backend:
+              service:
+                name: my-product-service
+                port:
+                  number: 80
                   
           # - path: /commodity
           #   pathType: Prefix
