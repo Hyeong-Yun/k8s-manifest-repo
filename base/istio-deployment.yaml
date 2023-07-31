@@ -49,7 +49,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-home-v1
+  name: my-app-home-new
 spec:
   replicas: 1
   selector:
@@ -118,7 +118,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-login-v1
+  name: my-app-login-new
 spec:
   replicas: 1
   selector:
