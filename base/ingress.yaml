@@ -1,44 +1,44 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: my-ingress-service
-  namespace: default
-  annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/actions.ssl-redirect: '443'
-    alb.ingress.kubernetes.io/load-balancer-name: ingress-alb
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/subnets: subnet-09fbc54863f1939eb, subnet-0cdde4eb82eacb5e0
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/36917b97-719d-49f2-9f20-bfd120a82e79
-  labels:
-    app: my-ingress-service
-spec:
-  rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: rollout-bluegreen-active # my-app-service
-                port:
-                  number: 80
-          - path: /login
-            pathType: Prefix
-            backend:
-              service:
-                name: my-login-service
-                port:
-                  number: 80
-          - path: /product
-            pathType: Prefix
-            backend:
-              service:
-                name: my-product-service
-                port:
-                  number: 80
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: my-ingress-service
+#   namespace: default
+#   annotations:
+#     kubernetes.io/ingress.class: alb
+#     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+#     alb.ingress.kubernetes.io/actions.ssl-redirect: '443'
+#     alb.ingress.kubernetes.io/load-balancer-name: ingress-alb
+#     alb.ingress.kubernetes.io/target-type: ip
+#     alb.ingress.kubernetes.io/subnets: subnet-09fbc54863f1939eb, subnet-0cdde4eb82eacb5e0
+#     alb.ingress.kubernetes.io/scheme: internet-facing
+#     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/36917b97-719d-49f2-9f20-bfd120a82e79
+#   labels:
+#     app: my-ingress-service
+# spec:
+#   rules:
+#     - http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: rollout-bluegreen-active # my-app-service
+#                 port:
+#                   number: 80
+#           - path: /login
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: my-login-service
+#                 port:
+#                   number: 80
+#           - path: /product
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: my-product-service
+#                 port:
+#                   number: 80
                   
           # - path: /commodity
           #   pathType: Prefix
@@ -56,33 +56,33 @@ spec:
           #         number: 80
 
 
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: my-ingress-service
-#   namespace: istio-system
-#   annotations:
-#     kubernetes.io/ingress.class: alb
-#     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-#     alb.ingress.kubernetes.io/actions.ssl-redirect: '443'
-#     alb.ingress.kubernetes.io/load-balancer-name: ingress-istio-alb
-#     alb.ingress.kubernetes.io/target-type: instance
-#     alb.ingress.kubernetes.io/subnets: subnet-09fbc54863f1939eb, subnet-0cdde4eb82eacb5e0
-#     alb.ingress.kubernetes.io/scheme: internet-facing
-#     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/36917b97-719d-49f2-9f20-bfd120a82e79
-#   labels:
-#     app: my-ingress-service
-# spec:
-#   rules:
-#     - http:
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: istio-ingressgateway
-#                 port:
-#                   number: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress-service
+  namespace: istio-system
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/actions.ssl-redirect: '443'
+    alb.ingress.kubernetes.io/load-balancer-name: ingress-istio-alb
+    alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/subnets: subnet-09fbc54863f1939eb, subnet-0cdde4eb82eacb5e0
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/36917b97-719d-49f2-9f20-bfd120a82e79
+  labels:
+    app: my-ingress-service
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: istio-ingressgateway
+                port:
+                  number: 80
 
 
 # alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:578310434439:certificate/30feba46-6d8c-433a-b7cf-bf183e7c451a
