@@ -45,9 +45,7 @@ spec:
         image: 578310434439.dkr.ecr.ap-northeast-2.amazonaws.com/develop:main-6b7fff9
         ports:
         - containerPort: 80
-
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
